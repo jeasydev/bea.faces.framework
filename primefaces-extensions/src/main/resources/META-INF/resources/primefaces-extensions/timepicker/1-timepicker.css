@@ -1,0 +1,60 @@
+.pe-timepicker {
+    display: inline-block;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+}
+
+.pe-timepicker-input {
+    vertical-align: middle;
+    text-align: left;
+    width: 60px;
+}
+
+.pe-timepicker-button {
+    cursor: default;
+    display: block;
+    font-size: 0.5em;
+    height: 44%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 16px;
+    z-index: 100;
+}
+
+.pe-timepicker .ui-icon {
+    left: 0;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+}
+
+.pe-timepicker-button.pe-timepicker-up {
+    top: 0;
+    border-bottom: none;
+}
+
+.pe-timepicker-button.pe-timepicker-down {
+    bottom: 0;
+}
+
+.pe-timepicker .ui-icon-triangle-1-s {
+    background-position: -65px -16px;
+}
+
+.pe-timepicker-trigger {
+    margin-left: 1px;
+    height: 2em;
+    width: 2em;
+    vertical-align: middle;
+}
+
+.pe-timepicker-trigger .ui-icon-clock {
+    left: 50%;
+}
