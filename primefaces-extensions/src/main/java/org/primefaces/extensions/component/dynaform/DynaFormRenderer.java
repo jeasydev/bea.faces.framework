@@ -79,7 +79,7 @@ public class DynaFormRenderer extends CoreRenderer {
         final ResponseWriter writer = fc.getResponseWriter();
 
         for (final DynaFormRow dynaFormRow : dynaFormRows) {
-            writer.startElement("tr", null);
+            writer.startElement("div", null);
             if (extended) {
                 writer.writeAttribute("class", DynaFormRenderer.EXTENDED_ROW_CLASS, null);
             }
@@ -88,15 +88,12 @@ public class DynaFormRenderer extends CoreRenderer {
                 writer.writeAttribute("style", "display:none;", null);
             }
 
-            writer.writeAttribute("role", "row", null);
-
             final List<AbstractDynaFormElement> elements = dynaFormRow.getElements();
             final int size = elements.size();
 
             for (int i = 0; i < size; i++) {
                 final AbstractDynaFormElement element = elements.get(i);
 
-                writer.startElement("td", null);
                 if (element.getColspan() > 1) {
                     writer.writeAttribute("colspan", element.getColspan(), null);
                 }
@@ -162,10 +159,9 @@ public class DynaFormRenderer extends CoreRenderer {
                     cell.encodeAll(fc);
                 }
 
-                writer.endElement("td");
             }
 
-            writer.endElement("tr");
+            writer.endElement("div");
         }
 
         dynaForm.resetData();
@@ -197,7 +193,7 @@ public class DynaFormRenderer extends CoreRenderer {
         final UIComponent facet = dynaForm.getFacet(name);
         if (facet != null && facet.isRendered()) {
             final ResponseWriter writer = fc.getResponseWriter();
-            writer.startElement("tr", null);
+            writer.startElement("div", null);
             if (extended) {
                 writer.writeAttribute("class", DynaFormRenderer.EXTENDED_ROW_CLASS, null);
             }
@@ -206,19 +202,14 @@ public class DynaFormRenderer extends CoreRenderer {
                 writer.writeAttribute("style", "display:none;", null);
             }
 
-            writer.writeAttribute("role", "row", null);
-            writer.startElement("td", null);
             if (totalColspan > 1) {
                 writer.writeAttribute("colspan", totalColspan, null);
             }
 
-            writer.writeAttribute("class", styleClass, null);
-            writer.writeAttribute("role", role, null);
 
             facet.encodeAll(fc);
 
-            writer.endElement("td");
-            writer.endElement("tr");
+            writer.endElement("div");
         }
     }
 
@@ -232,15 +223,12 @@ public class DynaFormRenderer extends CoreRenderer {
                                                                    : DynaFormRenderer.GRID_CLASS + " "
                                                                        + dynaForm.getStyleClass());
 
-        writer.startElement("table", dynaForm);
+        writer.startElement("div", dynaForm);
         writer.writeAttribute("id", clientId, "id");
-        writer.writeAttribute("cellspacing", "0", "cellspacing");
         writer.writeAttribute("class", styleClass, "styleClass");
         if (dynaForm.getStyle() != null) {
             writer.writeAttribute("style", dynaForm.getStyle(), "style");
         }
-
-        writer.writeAttribute("role", "grid", null);
 
         // prepare labels with informations about corresponding control
         // components
@@ -278,7 +266,7 @@ public class DynaFormRenderer extends CoreRenderer {
                         DynaFormRenderer.FACET_BUTTON_BAR_BOTTOM_CLASS, DynaFormRenderer.BUTTON_BAR_ROLE, false, true);
         }
 
-        writer.endElement("table");
+        writer.endElement("div");
     }
 
     protected void encodeScript(final FacesContext fc, final DynaForm dynaForm, final DynaFormModel dynaFormModel)

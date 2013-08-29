@@ -17,10 +17,6 @@
         </dependency>
         <dependency>
             <groupId>br.com.bea</groupId>
-            <artifactId>primefaces</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>br.com.bea</groupId>
             <artifactId>primefaces-extensions</artifactId>
         </dependency>
         <dependency>

@@ -17,7 +17,6 @@
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
     </properties>
     <modules>
-        <module>primefaces</module>
         <module>primefaces-extensions</module>
         <module>omnifaces</module>
         <module>core</module>
@@ -28,11 +27,6 @@
                 <groupId>br.com.bea</groupId>
                 <artifactId>core</artifactId>
                 <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>br.com.bea</groupId>
-                <artifactId>primefaces</artifactId>
-                <version>3.5</version>
             </dependency>
             <dependency>
                 <groupId>br.com.bea</groupId>
@@ -49,6 +43,11 @@
                 <artifactId>javaee-api</artifactId>
                 <version>6.0</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.primefaces</groupId>
+                <artifactId>primefaces</artifactId>
+                <version>3.5</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -153,4 +152,12 @@
             </plugins>
         </pluginManagement>
     </build>
+    <repositories>
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
 </project>
