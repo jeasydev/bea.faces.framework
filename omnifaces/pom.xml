@@ -40,7 +40,6 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.build.finalName}</Bundle-SymbolicName>
                         <Bundle-Vendor>${project.groupId}</Bundle-Vendor>
-                        <Export-Package />
                     </instructions>
                 </configuration>
             </plugin>
