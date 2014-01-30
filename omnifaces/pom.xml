@@ -8,10 +8,11 @@
         <artifactId>bea.faces.framework</artifactId>
         <version>1.0</version>
     </parent>
+    <groupId>org.omniface</groupId>
     <artifactId>omnifaces-osgi</artifactId>
     <version>1.4.1</version>
     <packaging>bundle</packaging>
-    <name>B&amp;A Tecnologia - Omnifaces </name>
+    <name>Omnifaces</name>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -43,6 +44,8 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Bundle-SymbolicName>${project.build.finalName}</Bundle-SymbolicName>
+                        <Bundle-Vendor>${project.groupId}</Bundle-Vendor>
                         <Export-Package />
                     </instructions>
                 </configuration>
